@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="18" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="structure_tiles" tilewidth="16" tileheight="16">
+  <image source="logic-map-1.png" width="128" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="left" value="True"/>
+    <property name="right" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="bottom" value="True"/>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="bottom" value="True"/>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="right" value="1"/>
+    <property name="top" value="1"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="left" value="True"/>
+    <property name="right" value="True"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="bottom" value="1"/>
+    <property name="top" value="1"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="bottom" value="True"/>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="bottom" value="1"/>
+    <property name="right" value="1"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="bottom" value=""/>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="left" value="True"/>
+    <property name="right" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Structure" width="25" height="18">
+  <data encoding="base64" compression="zlib">
+   eJwTYGBg4KYxFmCgLRAYtYNkO5hJxCxk2EFqOuEBYn4kTIwdtARDyQ584TaU/DFc7OBnwB0nQ8kfg8UOUssrUjDIfAC9cQTM
+  </data>
+ </layer>
+</map>

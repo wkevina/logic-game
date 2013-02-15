@@ -1,0 +1,87 @@
+Ideas of how to implement collision events and other trigger events
+
+The ColliderComponent maintains a hit area and a list of callbacks.
+
+During the update process, a collision manager tests for collisions between collidable objects,
+namely between ColliderComponent's.
+
+When a collision is detected, both collider components are notified by calling a method on each.
+
+The method takes a parameter to tell the collider which object it collided with.
+
+The collider keeps a list of these collision notifications.
+
+After all collisions have been performed, the colliders will then call each function from its 
+list of callbacks, passing themselves and the other collider.
+
+This will implement an event/listener system to inform entities about collisions.  An entity
+may simply be interested in collisions between its own collider and another, or it may be an
+entity that looks at collisions between other entities.
+
+Using this collision event system, a Trigger may be implemented which changes its state according
+to whether or not the player is overlapping some hit_area.  That trigger can then alert its own
+set of listeners, decoupling the events in the level from its actual source.  For example, an 
+elevator may be activated by an up/down signal, and the source of that signal could be a trigger
+that goes off based on a collision.  Or, the trigger may be based on a button press.  Or, a 
+trigger may made that goes off when an enemy is dead, or the player is in a certain part of map.
+
+Other types of colliders may be based on proximity.
+
+===========================
+
+Level objects
+
+Level is a Scene subclass.
+
+Factory methods to:
+
+Create background and foreground scenery layers from tmx file.
+
+The tmx file would basically be a format to specify the contents of the level.
+
+A dictionary of the format:
+
+{
+'entity': Entity,
+'sprite': SpriteComponent
+...
+}
+
+could be used to create entities and components from a simple text file.
+
+Or factor that out into another module which creates those entities and builds a Level from
+the text file that uses the factory methods of Level.  Hard to say how to implement that without
+more work on the entities and components themselves.
+
+=============================
+
+MapCollider optimization
+
+Select 0
+
+L3 1
+
+R3 2
+
+START 3
+
+UP 4
+
+RIGHT 5
+
+LEFT 6 ?
+
+LEFT 7 ?
+
+L2 8
+
+R2 9
+
+L1 10
+
+R1 11
+
+TRIANGLE 12
+
+CIRCLE 13
+
