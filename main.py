@@ -1,5 +1,5 @@
+import config # should always be first
 import cocos
-import config
 import pyglet
 import inputmanager
 #import cocos.euclid as eu
