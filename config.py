@@ -1,3 +1,9 @@
+"""
+Collects static data used by other parts of the program.
+
+Tweaking these settings allows global changes.
+"""
+
 from os.path import join, abspath, dirname
 import os
 import sys
@@ -40,7 +46,7 @@ pyglet.resource.reindex()
 
 GRAVITY = 850.0 # pixels/s^2
 
-player1 = {
+PLAYER_1 = {
 	'index': 1,
 		
 	'joystick':

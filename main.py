@@ -21,7 +21,7 @@ def main():
 	# Initialize the InputManager
 	inputmanager.init()
 		
-	inputmanager.input_manager.bind(config.player1)
+	inputmanager.input_manager.bind(config.PLAYER_1)
 			
 	print config.WIDTH, config.HEIGHT
 				
