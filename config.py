@@ -1,5 +1,6 @@
-import pyglet
-import inputmanager
+from os.path import join, abspath, dirname
+import os
+import sys
 
 TITLE = 'Logic Game'
 
@@ -23,12 +24,21 @@ MAPS_DIR = 'Maps/'
 
 IMAGES_DIR = 'Images/'
 
+# Directory to find libraries needed by the game.
+LIB_DIR = '../lib/'
+
+# Add those libraries to the system path
+LIB_DIR = abspath(join(dirname(abspath(__file__)), LIB_DIR))
+for lib in os.listdir(LIB_DIR):
+	sys.path.append(abspath(join(LIB_DIR, lib)))
+
+import pyglet
+
 pyglet.resource.path.append(MAPS_DIR)
 pyglet.resource.path.append(IMAGES_DIR)
 pyglet.resource.reindex()
 
-#GRAVITY = 0.21875 # pixels/s^2
-GRAVITY = 850.0
+GRAVITY = 850.0 # pixels/s^2
 
 player1 = {
 	'index': 1,
