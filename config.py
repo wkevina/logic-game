@@ -14,7 +14,7 @@ FS = False
 
 JS_DEADZONE = 0.3 # The absolute value of a joystick movement must be greater than this value to count
 
-BG_COLOR = (0.3,0.3,0.3,1)
+BG_COLOR = (0.1,0.1,0.1,1)
 
 SCALE = 3 # Global scale for all layers
 
