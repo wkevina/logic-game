@@ -176,16 +176,32 @@ class InputManager(cocos.cocosnode.CocosNode):
 	is_event_handler = True
 	
 	def __init__(self):
+		pass
+		
+	def init(self):
+		"""
+		Method to setup the InputManager.
+		
+		Needed to implement the pseudo-singleton interface.
+	
+		Call after calling cocos.director.director.init()
+	
+		Should be called before scenes are run by the director.
+		
+		"""
 		super(InputManager, self).__init__()
+		
+		from cocos.director import director
+	
+		director.window.push_handlers(self.on_key_press, self.on_key_release)
+		
 		self._keys = set()
 		self._joysticks = []
 		self.__unused_joysticks = []
 		self._bindings = {} # Dictionary containing InputBindings, by index
 		
 		self.find_joysticks() # Find and open all joystick devices
-		
-		#self.bind(InputBinding.sample_binding)
-		
+				
 		self.is_running = True
 		
 		self.schedule(self.step)
@@ -197,6 +213,7 @@ class InputManager(cocos.cocosnode.CocosNode):
 		Also opens each device for reading, but does not assign any event handlers
 		to them.  Therefore, the joystick will not be read by any input binding
 		yet.
+		
 		"""
 		self._joysticks = pyglet.input.get_joysticks()
 		self.__unused_joysticks = list(self._joysticks)
@@ -213,6 +230,7 @@ class InputManager(cocos.cocosnode.CocosNode):
 		Takes a dictionary describing input bindings
 		and creates an InputBinding object containing that
 		information and sets up up the callbacks.
+		
 		"""		
 		new_input_binding = InputBinding(binding_dict)
 		# Check before adding to bindings dictionary
@@ -256,20 +274,4 @@ class InputManager(cocos.cocosnode.CocosNode):
 		for binding in self._bindings.itervalues():
 			binding.update(self._keys)
 
-
-def init():
-	"""
-	Module level function to setup the InputManager.
-	
-	Call after calling cocos.director.director.init()
-	
-	Should be called before scenes are run by the director.
-	"""
-	global input_manager
-	input_manager = InputManager()
-	
-	from cocos.director import director
-	
-	director.window.push_handlers(input_manager.on_key_press, input_manager.on_key_release)
-
-input_manager = None
+inputmanager = InputManager()

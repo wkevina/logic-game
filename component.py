@@ -1,7 +1,7 @@
 import entity
 import cocos.euclid as eu
 import cocos
-import inputmanager
+from inputmanager import inputmanager as in_man
 import config
 
 class ComponentNotSetupException(Exception):
@@ -102,7 +102,7 @@ class Jumper(Component):
 		self.player_index = player_index
 	
 	def setup(self):
-		self.input_dict = inputmanager.input_manager.get_input_dict(self.player_index)
+		self.input_dict = in_man.get_input_dict(self.player_index)
 		self.is_setup = True
 		try:
 			self.physics = self.parent.get_component(PhysicsComponent)

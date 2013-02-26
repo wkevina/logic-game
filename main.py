@@ -1,15 +1,16 @@
 import config # should always be first
 import cocos
 import pyglet
-import inputmanager
 #import cocos.euclid as eu
 import math
 import entity as en
 import component as comp
+
+from cocos.director import director as dtor
+from inputmanager import inputmanager as in_man
+
 		
-def main():
-	from cocos.director import director as dtor
-	
+def main():	
 	# Initialize Director
 	dtor.init(width=config.WIDTH,
 			  height=config.HEIGHT,
@@ -19,9 +20,9 @@ def main():
 			  do_not_scale=True,
 			  )
 	# Initialize the InputManager
-	inputmanager.init()
+	in_man.init()
 		
-	inputmanager.input_manager.bind(config.PLAYER_1)
+	in_man.bind(config.PLAYER_1)
 			
 	print config.WIDTH, config.HEIGHT
 				

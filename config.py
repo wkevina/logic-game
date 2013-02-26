@@ -25,7 +25,7 @@ SIZE = (15,9) # Size of field in tiles
 WIDTH, HEIGHT = tuple([a*b*SCALE for a,b in zip(TILE_SIZE, SIZE)]) # Size of window, 
                                                               # scaled for tile size, 
                                                               # field size, and scale
-															  
+													  
 MAPS_DIR = 'Maps/'
 
 IMAGES_DIR = 'Images/'
