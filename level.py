@@ -1,7 +1,7 @@
 """
 Module for the Level class, which encapsulates the data and workings of a game-level.
 """
-
+import config
 import ecs
 import cocos
 
@@ -36,6 +36,7 @@ class Level(cocos.scene.Scene):
 		bg : a RectMapLayer for background scenery
 		
 		"""
+		super(Level, self).__init__()
 		
 		self._background = None
 		self._foreground = None
@@ -49,15 +50,24 @@ class Level(cocos.scene.Scene):
 		self.database = ecs.EntityManager() # a database to hold all component data
 		self.systems = ecs.SystemManager(self.database) # the container for Systems
 		
+		self.add(self.scroller)
+		#self.scroller.add(self.background, z=-1)
+		#self.scroller.add(self.foreground, z=0)
+		self.scroller.add(self.sprites, z=1)
+		
+		self.scroller.scale = config.SCALE
+		
 	@property
 	def background(self):
 		return self._background
 		
 	@background.setter
 	def background(self, new_bg):
-		self.remove(self._background)
-		self._background = new_bg
-		self.add(new_bg, z=-1)
+		if self._background:
+			self.scroller.remove(self._background)
+		if new_bg:
+			self._background = new_bg
+			self.scroller.add(new_bg, z=-1)
 		
 	@property
 	def foreground(self):
@@ -65,6 +75,9 @@ class Level(cocos.scene.Scene):
 		
 	@background.setter
 	def foreground(self, new_fg):
-		self.remove(self._foreground)
-		self._foreground = new_fg
-		self.add(new_fg, z=0)
+		if self._foreground:
+			self.scroller.remove(self._foreground)
+		if new_fg:
+			self._foreground = new_fg
+			self.scroller.add(new_fg, z=0)
+			

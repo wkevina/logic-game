@@ -3,8 +3,8 @@ import cocos
 import pyglet
 #import cocos.euclid as eu
 import math
-import entity as en
-import component as comp
+
+import level
 
 from cocos.director import director as dtor
 from inputmanager import inputmanager as in_man
@@ -25,7 +25,8 @@ def main():
 	in_man.bind(config.PLAYER_1)
 			
 	print config.WIDTH, config.HEIGHT
-				
+	
+	"""			
 	main_scene = cocos.scene.Scene()
 	
 	sm = cocos.layer.ScrollingManager()
@@ -61,23 +62,16 @@ def main():
 	#main_scene.schedule(track_player)
 	
 	dtor.interpreter_locals['el'] = el
+	"""
+	tile_map = cocos.tiles.load('logic-map-1.tmx')
+	
+	first_level = level.Level()
+	first_level.foreground = tile_map['Structure']
 	
 	pyglet.gl.glClearColor(*config.BG_COLOR)	
 	#dtor.set_show_FPS(True)
-	dtor.run(main_scene)		
+	dtor.run(first_level)		
 		
 if __name__ == '__main__':
 		
 	main()
-	
-		
-## TODO
-
-# To implement collisions:
-
-# Create a collider component.	That gets added to an entity.  On setup, the collider
-# adds itself to the parents ColliderManager or similar.  During the update phase, the
-# the collider will detect collisions and message the collider about collisions with
-# the environment.	The Collider component can then move the entity appropriately in response 
-# to the collision.
-		
