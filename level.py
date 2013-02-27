@@ -17,7 +17,7 @@ class Level(cocos.scene.Scene):
 	foreground	: a RectMapLayer which displays foreground imagery.  This map is also used for
 				  map collisions.
 	
-	sprite_layer: a ScrollableLayer to which sprites can be added
+	sprites		: a ScrollableLayer to which sprites can be added
 	
 	scroll_man	: a ScrollingManager to look after scrolling of the view
 				 
@@ -57,6 +57,9 @@ class Level(cocos.scene.Scene):
 		
 		self.scroller.scale = config.SCALE
 		
+		# add self to the director's interpreter_locals
+		cocos.director.director.interpreter_locals['level'] = self
+		
 	@property
 	def background(self):
 		return self._background
@@ -81,3 +84,11 @@ class Level(cocos.scene.Scene):
 			self._foreground = new_fg
 			self.scroller.add(new_fg, z=0)
 			
+	def on_enter(self):
+		super(Level, self).on_enter()
+		
+		self.schedule(self.update_on_frame)
+		
+	def update_on_frame(self, dt):
+		#print 'update_on_frame called'
+		self.systems.update_systems(dt)

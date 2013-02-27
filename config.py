@@ -14,9 +14,9 @@ FS = False
 
 JS_DEADZONE = 0.3 # The absolute value of a joystick movement must be greater than this value to count
 
-BG_COLOR = (0.1,0.1,0.1,1)
+BG_COLOR = (0.7,0.7,0.8,1)
 
-SCALE = 3 # Global scale for all layers
+SCALE = 1 # Global scale for all layers
 
 TILE_SIZE = (16,16) # Size of tiles in pixels.  Could be set programmatically by other means
 

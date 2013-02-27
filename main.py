@@ -1,10 +1,12 @@
 import config # should always be first
+
 import cocos
 import pyglet
 #import cocos.euclid as eu
 import math
 
 import level
+import spritesystem
 
 from cocos.director import director as dtor
 from inputmanager import inputmanager as in_man
@@ -67,6 +69,22 @@ def main():
 	
 	first_level = level.Level()
 	first_level.foreground = tile_map['Structure']
+	
+	# build out level
+	db = first_level.database
+	
+	e_1 = db.new_entity()
+	sc = spritesystem.Sprite()
+	sc.sprite = cocos.sprite.Sprite('animated-robot.png')
+	first_level.sprites.add(sc.sprite)
+	pos = spritesystem.Position()
+	pos.x = 100
+	pos.y = 100
+	db.add_component(e_1, pos)
+	db.add_component(e_1, sc)
+	
+	first_level.systems.add_system(spritesystem.SpriteSystem())
+	
 	
 	pyglet.gl.glClearColor(*config.BG_COLOR)	
 	#dtor.set_show_FPS(True)
