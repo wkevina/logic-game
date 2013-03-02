@@ -200,14 +200,14 @@ class InputManager(cocos.cocosnode.CocosNode):
 		self.__unused_joysticks = []
 		self._bindings = {} # Dictionary containing InputBindings, by index
 		
-		self.find_joysticks() # Find and open all joystick devices
+		self._find_joysticks() # Find and open all joystick devices
 				
 		self.is_running = True
 		
 		self.schedule(self.step)
 
 		
-	def find_joysticks(self):
+	def _find_joysticks(self):
 		"""
 		Gets a reference to each joystick device and populates a list with them.
 		Also opens each device for reading, but does not assign any event handlers
