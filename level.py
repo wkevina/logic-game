@@ -48,7 +48,7 @@ class Level(cocos.scene.Scene):
 		self.scroller = cocos.layer.ScrollingManager()
 		
 		self.database = ecs.EntityManager() # a database to hold all component data
-		self.systems = ecs.SystemManager(self.database) # the container for Systems
+		self.systems = ecs.SystemManager(self) # the container for Systems
 		
 		self.add(self.scroller)
 		#self.scroller.add(self.background, z=-1)
@@ -76,7 +76,7 @@ class Level(cocos.scene.Scene):
 	def foreground(self):
 		return self._foreground
 		
-	@background.setter
+	@foreground.setter
 	def foreground(self, new_fg):
 		if self._foreground:
 			self.scroller.remove(self._foreground)
@@ -91,4 +91,6 @@ class Level(cocos.scene.Scene):
 		
 	def update_on_frame(self, dt):
 		#print 'update_on_frame called'
-		self.systems.update_systems(dt)
+		dt = 1.0/60.0
+		#print 'dt: {}'.format(dt)
+		self.systems.update_systems(dt, self.database)

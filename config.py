@@ -10,17 +10,19 @@ import sys
 
 TITLE = 'Logic Game'
 
-FS = False
+FS = True
+
+SHOW_FPS = False
 
 JS_DEADZONE = 0.3 # The absolute value of a joystick movement must be greater than this value to count
 
-BG_COLOR = (0.7,0.7,0.8,1)
+BG_COLOR = (0.2,0.2,0.21,1)
 
-SCALE = 3 # Global scale for all layers
+SCALE = 2 # Global scale for all layers
 
 TILE_SIZE = (16,16) # Size of tiles in pixels.  Could be set programmatically by other means
 
-SIZE = (15,9) # Size of field in tiles
+SIZE = (30,18) # Size of field in tiles
 
 WIDTH, HEIGHT = tuple([a*b*SCALE for a,b in zip(TILE_SIZE, SIZE)]) # Size of window, 
                                                               # scaled for tile size, 
@@ -44,7 +46,7 @@ pyglet.resource.path.append(MAPS_DIR)
 pyglet.resource.path.append(IMAGES_DIR)
 pyglet.resource.reindex()
 
-GRAVITY = 850.0 # pixels/s^2
+GRAVITY = 900.0 # pixels/s^2
 
 PLAYER_1 = {
 	'index': 1,

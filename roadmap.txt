@@ -85,3 +85,24 @@ TRIANGLE 12
 
 CIRCLE 13
 
+EntityManager API improvement
+
+add method:
+    
+    entities_with(Position, Velocity, ..., Sprite)
+    
+    which returns a list of dictionaries with the format:
+    
+    {
+        id: e_id,
+        pos: pos_instance,
+        vel: vel_instance,
+        ...,
+        sprite: sprite_instance    
+    }
+
+entities_with will return none if no matches could be made, and only returns the components
+for an entity that has all of the components given.
+    
+    
+    

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="25" height="18" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" width="60" height="20" tilewidth="16" tileheight="16">
  <tileset firstgid="1" name="structure_tiles" tilewidth="16" tileheight="16">
   <image source="logic-map-1.png" width="128" height="32"/>
   <tile id="0">
@@ -63,9 +63,9 @@
    </properties>
   </tile>
  </tileset>
- <layer name="Structure" width="25" height="18">
+ <layer name="Structure" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJwTYGBg4KYxFmCgLRAYtYNkO5hJxCxk2EFqOuEBYn4kTIwdtARDyQ584TaU/DFc7OBnwB0nQ8kfg8UOUssrUjDIfAC9cQTM
+   eJztl9EKwCAIRYXtbQP7/6+NQcEYNHQqK/XAfegh8GAlFQA4BjnBF6UlCunrG0tfbBmtOXu16L4bM7tBLRZ+T7rv6H1+e7cRZH2Q9hCBX0Pe3/mQnqM7Wr6aNVmyQn81SV/fUOYvZdZ+mQ1/QJm/nv5I1PM8c884RL2/UYjqy/0frZrLtQKM0QY8
   </data>
  </layer>
 </map>
