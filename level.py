@@ -71,6 +71,7 @@ class Level(cocos.scene.Scene):
 		if new_bg:
 			self._background = new_bg
 			self.scroller.add(new_bg, z=-1)
+			self._background.parallax = 0.9
 		
 	@property
 	def foreground(self):

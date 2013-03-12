@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="60" height="20" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="structure_tiles" tilewidth="16" tileheight="16">
+  <image source="logic-map-1.png" width="128" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="left" value="True"/>
+    <property name="right" value="True"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="bottom" value="True"/>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="bottom" value="True"/>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="right" value="1"/>
+    <property name="top" value="1"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="left" value="True"/>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="left" value="True"/>
+    <property name="right" value="True"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="bottom" value="1"/>
+    <property name="top" value="1"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="bottom" value="True"/>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="bottom" value="1"/>
+    <property name="right" value="1"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="bottom" value="True"/>
+    <property name="left" value="True"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="bottom" value=""/>
+    <property name="top" value="True"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="left" value="True"/>
+    <property name="right" value="True"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="17" name="switch" tilewidth="16" tileheight="16">
+  <image source="switch.png" width="32" height="16"/>
+ </tileset>
+ <layer name="Background" width="60" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztw0ENAAAMA6HTUP9iZ2MPSFg1VVVVVX36AO3ZVGE=
+  </data>
+ </layer>
+ <layer name="Structure" width="60" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztldEKwCAIRYWNvWys/v9rR1AvA6vVVEwP3Hcv6SmCHWKOFbzv2pS+G5JdbjQSSt8TySU3GglW99kKHH0PwP3A7QyOvjfgfsCcEXL+xvdZD+GVHlr/r9SdUdH6f1t31sOsr76+YQ3qfU4zjvqKAs33O4L3XZsZP2vMjJ81JnV9AGvECPg=
+  </data>
+ </layer>
+</map>

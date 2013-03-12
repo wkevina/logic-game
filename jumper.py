@@ -1,7 +1,7 @@
 import math
 
 import common
-import spritesystem
+import graphics
 import ecs
 
 class JumperAnimation(ecs.Component):
@@ -79,7 +79,7 @@ class JumperAnimationSystem(ecs.System):
 	def update(self, dt, entity_manager):
 		pairs = entity_manager.pairs_for_type(JumperAnimation)
 		for e_id, j_a in pairs:
-			sprite = entity_manager.component_for_entity(e_id, spritesystem.Sprite)
+			sprite = entity_manager.component_for_entity(e_id, graphics.Sprite)
 			vel = entity_manager.component_for_entity(e_id, common.Velocity)
 			jumper = entity_manager.component_for_entity(e_id, Jumper)
 			

@@ -5,7 +5,7 @@ Some common components that aren't too specialized.
 import cocos
 import ecs
 import inputmanager
-import spritesystem
+import graphics
 import jumper
 import config
 import util
@@ -15,9 +15,9 @@ class Position(ecs.Component):
 	An entity's position in 2D space
 	
 	"""
-	def __init__(self):
-		self.x = 0
-		self.y = 0
+	def __init__(self, x=0, y=0):
+		self.x = x
+		self.y = y
 		
 class Velocity(ecs.Component):
 	"""
@@ -128,7 +128,7 @@ class RectColliderTrackerSystem(ecs.System):
 			if pos:
 				collider.last = collider.hit_rect.copy()
 				collider.hit_rect.center = (pos.x, pos.y)
-			sprite = entity_manager.component_for_entity(e_id, spritesystem.Sprite)
+			sprite = entity_manager.component_for_entity(e_id, graphics.Sprite)
 			if sprite:
 				collider.hit_rect.width  = sprite.sprite.width
 				collider.hit_rect.height = sprite.sprite.height

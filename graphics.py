@@ -63,7 +63,7 @@ class SpriteTrackerSystem(ecs.System):
                 c_spr.position = (pos.x, pos.y)
                 c_spr.image_anchor = offset_x, offset_y
                 
-                print 'pos: {}, a: {}'.format((pos.x, pos.y), (sprite.align_x, sprite.align_y))
-                print 'spr w: {}, h:{}'.format(c_spr.width, c_spr.height)
-                print 'offset: {}'.format((offset_x, offset_y))
-                print 'sprite pos: {}\n--------'.format(c_spr.position)
+                #print 'pos: {}, a: {}'.format((pos.x, pos.y), (sprite.align_x, sprite.align_y))
+                #print 'spr w: {}, h:{}'.format(c_spr.width, c_spr.height)
+                #print 'offset: {}'.format((offset_x, offset_y))
+                #print 'sprite pos: {}\n--------'.format(c_spr.position)

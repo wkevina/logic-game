@@ -104,5 +104,14 @@ add method:
 entities_with will return none if no matches could be made, and only returns the components
 for an entity that has all of the components given.
     
-    
++++++
+
+TwoStateGraphic:
+
+A component that holds two images or slices of an image, and a state.
+
+Each frame, depending on the state the TwoStateGraphic is in, the image for
+the Sprite of the entity is substituted for one of the TwoStateGraphic's images.
+
+This would work for switches, doors, buttons, etc.
     

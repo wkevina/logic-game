@@ -10,7 +10,7 @@ import sys
 
 TITLE = 'Logic Game'
 
-FS = True
+FS = False
 
 SHOW_FPS = False
 
@@ -45,6 +45,8 @@ import pyglet
 pyglet.resource.path.append(MAPS_DIR)
 pyglet.resource.path.append(IMAGES_DIR)
 pyglet.resource.reindex()
+
+DEFAULT_IMAGE = pyglet.resource.image('blank.png')
 
 GRAVITY = 900.0 # pixels/s^2
 
