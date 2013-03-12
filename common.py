@@ -127,7 +127,7 @@ class RectColliderTrackerSystem(ecs.System):
 			pos = entity_manager.component_for_entity(e_id, Position)
 			if pos:
 				collider.last = collider.hit_rect.copy()
-				collider.hit_rect.center = (pos.x, pos.y)
+				collider.hit_rect.position = (pos.x, pos.y)
 			sprite = entity_manager.component_for_entity(e_id, graphics.Sprite)
 			if sprite:
 				collider.hit_rect.width  = sprite.sprite.width
@@ -183,7 +183,7 @@ class MapCollisionSystem(ecs.System):
 															  collider.last, 
 															  collider.hit_rect, 
 															  0, 0)
-				pos.x, pos.y = collider.hit_rect.center
+				pos.x, pos.y = collider.hit_rect.position
 				if delta[0]: # if there was some penetration in the x-direction
 					vel.v_x = 0 # kill the x velocity
 				if abs(delta[1]):

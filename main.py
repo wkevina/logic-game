@@ -94,7 +94,7 @@ def main():
     db = first_level.database
     
     e_1 = db.new_entity()
-    sc = graphics.Sprite()
+    sc = graphics.Sprite(align=(-1,-1))
     sc.sprite = cocos.sprite.Sprite(walk_anim, opacity=250)
     first_level.sprites.add(sc.sprite)
     pos = common.Position()
