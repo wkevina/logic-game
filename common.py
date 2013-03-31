@@ -199,8 +199,8 @@ class PlayerViewTrackerSystem(ecs.System):
 		pairs = entity_manager.pairs_for_type(PlayerInput)
 		for e_id, pi in pairs:
 			pos = entity_manager.component_for_entity(e_id, Position)
-			new_x = util.lerp(pos.x, scroller.restricted_fx, 0.6)
-			new_y = util.lerp(pos.y, scroller.restricted_fy, 0.6)
+			new_x = util.lerp(pos.x, scroller.restricted_fx, 0.0)
+			new_y = util.lerp(pos.y, scroller.restricted_fy, 0.0)
 			
 			if new_x < pos.x - 50:
 				new_x = util.lerp(new_x, pos.x - 50, 0.5)
